@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home - Foodie's Hub</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="/">Foodie's Hub</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="/restaurants">Top Restaurants</a></li>
+          <li class="nav-item"><a class="nav-link" href="/login">Login/Signup</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <h1>Discover the Best Dining Experiences</h1>
+          <p>Find your perfect meal with Foodie's Hub. Explore top-rated restaurants, read reviews, and book your next culinary adventure.</p>
+          <button class="btn btn-primary btn-lg" id="exploreNowButton">Explore Now</button>
+          <script>
+            const exploreNowButton = document.getElementById("exploreNowButton");
+            exploreNowButton.addEventListener('click', function() {
+              window.location.href = "{{ url_for('restaurants') }}"; // Use Flask's url_for
+            });
+          </script>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Removed search-bar section -->
+
+  <section class="featured-reviews">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h2>Featured Reviews</h2>
+          <div class="row">
+            <!-- Review cards will be generated here -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer mt-5 py-3 bg-light">
+    <div class="container">
+      <p class="text-center mb-0">Copyright &copy; Foodie's Hub 2023</p>
+    </div>
+  </footer>
+  <script>
+    
+
+    // Call the function to generate review cards on page load
+    window.addEventListener('load', generateReviewCards);
+  </script>
+</body>
+</html>

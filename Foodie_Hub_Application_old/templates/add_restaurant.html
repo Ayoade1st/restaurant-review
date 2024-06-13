@@ -1,0 +1,10 @@
+{% from 'flask_wtf.csrf' import csrf_token %}
+
+<form method="post" action="{{ url_for('add_restaurant') }}">
+  {{ csrf_token() }}
+  <input type="text" name="name" placeholder="Restaurant Name" required>
+  <textarea name="description" placeholder="Description"></textarea>
+  <input type="text" name="image_path" placeholder="Image Path">
+  <input type="number" name="rating" placeholder="Rating" step="0.1" min="0" max="5">
+  <button type="submit">Add Restaurant</button>
+</form>

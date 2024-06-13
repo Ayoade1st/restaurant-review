@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ restaurant.name }} - Foodie's Hub</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <header>
+    <!-- Same navigation bar as index.html -->
+  </header>
+
+  <section class="restaurant-details-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h2 class="mb-4">{{ restaurant.name }}</h2>
+          <div class="row">
+            <div class="col-md-4">
+              <img src="{{ restaurant.image_path }}" class="img-fluid" alt="{{ restaurant.name }}">
+            </div>
+            <div class="col-md-8">
+              <p>{{ restaurant.description }}</p>
+              <p>Rating: <span class="text-warning">{{ restaurant.rating }}/5</span></p>
+              <!-- Add more details as needed -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a href="{{ url_for('restaurant_reviews', restaurant_id=restaurant.id) }}">View Reviews</a>
+  </section>
+
+  <footer class="footer mt-5 py-3 bg-light">
+    <!-- Same footer as index.html -->
+  </footer>
+
+</body>
+</html>

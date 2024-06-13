@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Restaurant - Foodie's Hub</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <header>
+    <!-- Same navigation bar as index.html -->
+  </header>
+
+  <section class="add-restaurant-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 offset-md-3">
+          <h2>Add a New Restaurant</h2>
+          <form method="POST" action="/add-restaurant">
+            <div class="form-group">
+              <label for="name">Restaurant Name:</label>
+              <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+              <label for="description">Description:</label>
+              <textarea class="form-control" id="description" name="description" rows="3" required></textarea>
+            </div>
+            <div class="form-group">
+              <label for="rating">Rating (1-5):</label>
+              <input type="number" class="form-control" id="rating" name="rating" min="1" max="5" required>
+            </div>
+            <div class="form-group">
+              <label for="image_path">Image URL:</label>
+              <input type="text" class="form-control" id="image_path" name="image_path" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Add Restaurant</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer mt-5 py-3 bg-light">
+    <!-- Same footer as index.html -->
+  </footer>
+
+</body>
+</html>

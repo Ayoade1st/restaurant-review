@@ -1,0 +1,65 @@
+/* Basic Styling */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #f8f9fa; /* Light grey background */
+}
+
+.hero {
+  background-color: #e9ecef; /* Light grey background */
+  padding: 50px 0;
+}
+
+.featured-reviews {
+  padding: 50px 0;
+}
+
+.footer {
+  background-color: #f8f9fa; /* Light grey background */
+}
+
+/* Hero Section Styling */
+.hero h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+/* Search Bar Styling */
+.search-bar {
+  padding: 20px 0;
+}
+
+/* Featured Reviews Styling */
+.featured-reviews h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+/* Review Card Styling */
+.review-card {
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.review-card h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.review-card p {
+  font-size: 1rem;
+}
